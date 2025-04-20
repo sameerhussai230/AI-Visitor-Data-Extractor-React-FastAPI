@@ -1,0 +1,60 @@
+# --- General / OS ---
+.DS_Store
+Thumbs.db
+*.log
+*.swo
+*.swp
+
+# --- IDEs / Editors ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Python / Backend ---
+# Virtual Environment (IMPORTANT!)
+/backend/venv/
+
+# Byte-compiled / optimized / DLL files
+/backend/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Distribution / packaging
+/backend/build/
+/backend/dist/
+/backend/*.egg-info/
+/backend/*.egg
+
+# Secrets (IMPORTANT!)
+/backend/.env
+
+# Database File (Optional - remove if you WANT to commit the DB, e.g., for sample data)
+/backend/data_extractor.db
+
+# Pytest cache
+/backend/.pytest_cache/
+/backend/.coverage
+
+# --- Node.js / Frontend ---
+# Dependencies (IMPORTANT!)
+/frontend/node_modules/
+
+# Build output
+/frontend/build/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Secrets (IMPORTANT!)
+/frontend/.env
+
+# Test output
+/frontend/coverage/
+
+# --- Root Level ---
+# Any pycache at the root (if scripts run from here)
+__pycache__/
