@@ -9,8 +9,8 @@ This application streamlines the process of digitizing physical records like vis
 **Business Use Case:** Automates tedious manual data entry, reduces errors, saves time, and creates searchable digital records from physical documents common in reception areas or networking events.
 
 ## Demo
-![visiter_gif](https://github.com/user-attachments/assets/7f418ecd-8b4b-455a-b52b-1464e7dcfc11)
 
+![visiter_gif](https://github.com/user-attachments/assets/7f418ecd-8b4b-455a-b52b-1464e7dcfc11)
 
 ## Key Features
 
