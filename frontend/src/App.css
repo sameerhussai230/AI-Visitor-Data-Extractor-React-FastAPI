@@ -1,0 +1,418 @@
+/* frontend/src/App.css */
+
+/* --- Global Styles & Resets --- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; /* Lighter grey background */
+  color: #333;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- Main App Container --- */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* --- Header --- */
+.app-header {
+  background-color: #001529; /* Dark blue header */
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.app-title {
+  font-size: 1.8em;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* --- Tab Navigation --- */
+.tab-navigation {
+  background-color: #fff;
+  padding: 0 30px;
+  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tab-button {
+  padding: 15px 25px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #555;
+  position: relative;
+  transition: color 0.3s ease;
+  margin-right: 10px;
+}
+
+.tab-button:hover {
+  color: #1890ff; /* Ant Design blue */
+}
+
+.tab-button.active {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+/* Underline effect for active tab */
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; /* Align with the container border */
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #1890ff;
+  border-radius: 2px 2px 0 0;
+}
+
+
+/* --- Tab Content Area --- */
+.tab-content {
+  flex-grow: 1; /* Takes remaining vertical space */
+  padding: 30px;
+  background-color: #f0f2f5; /* Match body background */
+}
+
+/* --- Upload Tab Specific Styles --- */
+.upload-tab-container {
+  max-width: 1100px; /* Wider container for side-by-side */
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Landing Page Section within Upload Tab */
+.landing-section {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 30px;
+}
+
+.landing-title {
+    font-size: 2.5em;
+    color: #001529;
+    margin-bottom: 15px;
+}
+
+.landing-description {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    line-height: 1.7;
+}
+
+.landing-features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 200px; /* Minimum width before wrapping */
+    max-width: 250px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 3em; /* Make icons larger */
+    color: #1890ff;
+    margin-bottom: 10px;
+}
+
+.feature-item h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.feature-item p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+
+/* Upload Section */
+.upload-section {
+  padding: 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  background-color: #fafafa;
+  margin-bottom: 30px;
+  text-align: center; /* Center button */
+}
+
+.upload-section label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.upload-section input[type="file"] {
+  display: block;
+  margin: 0 auto 20px auto; /* Center input */
+  padding: 10px;
+  border: 1px dashed #d9d9d9;
+  border-radius: 4px;
+  max-width: 400px;
+  text-align: center;
+  cursor: pointer;
+}
+.upload-section input[type="file"]::file-selector-button {
+    /* Style the button if needed, browser support varies */
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+/* Preview Section */
+.preview-section {
+  margin-bottom: 30px;
+  padding: 25px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.preview-section h2 {
+    margin-top: 0;
+}
+.preview-section > p { /* Instructions */
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 1.05em;
+}
+
+/* Side-by-side layout */
+.validation-container {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+.validation-image-column {
+  flex: 1 1 40%; /* Image takes slightly less space */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.validation-data-column {
+  flex: 1 1 60%;
+  overflow-x: auto;
+}
+.image-preview-container-large {
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  padding: 10px;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px; /* Give it some min height */
+}
+.preview-image-large {
+  max-width: 100%;
+  max-height: 500px;
+  height: auto;
+  display: block;
+}
+
+/* Data Preview Table Styles */
+.data-preview table { width: 100%; border-collapse: collapse; margin-top: 0; }
+.data-preview th, .data-preview td { border: 1px solid #e8e8e8; padding: 10px 12px; text-align: left; vertical-align: top; }
+.data-preview th { background-color: #fafafa; font-weight: 600; color: #555; }
+.data-preview ul { margin: 0; padding-left: 20px; }
+.data-preview i { color: #999; } /* Style for null/empty */
+
+/* Action Buttons */
+.preview-actions { text-align: center; margin-top: 20px; }
+.preview-actions button { margin: 0 10px; }
+
+
+/* --- Visualize Tab Specific Styles --- */
+.visualize-tab-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  flex-wrap: wrap; /* Allow filters to wrap */
+}
+
+.filters-container label {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* Styling react-datepicker */
+.react-datepicker-wrapper input {
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 1em;
+  width: 150px; /* Adjust width */
+}
+.react-datepicker__input-container {
+    margin-right: 10px; /* Space after date picker */
+}
+
+.data-display-section {
+  margin-bottom: 30px;
+}
+
+.data-display-section h3 {
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.data-table-container {
+  max-height: 400px; /* Limit table height */
+  overflow-y: auto; /* Add vertical scroll */
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  margin-bottom: 20px; /* Space below table */
+}
+
+.data-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.data-table-container th, .data-table-container td {
+  border: 1px solid #e8e8e8;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.95em;
+}
+.data-table-container th {
+  background-color: #fafafa;
+  font-weight: 600;
+  position: sticky; /* Make headers sticky */
+  top: 0;
+  z-index: 1;
+}
+.data-table-container td span.json-list { /* Style for decoded list */
+    display: block;
+    margin-top: 3px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+.charts-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap; /* Allow charts to wrap */
+  justify-content: space-around; /* Distribute space */
+}
+
+.chart-wrapper {
+  flex: 1 1 45%; /* Each chart takes roughly half width */
+  min-width: 300px; /* Minimum width before wrapping */
+  padding: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.chart-wrapper h4 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+
+/* --- General UI Elements --- */
+/* Buttons (already styled mostly) */
+button {
+  background-color: #1890ff; /* Ant Design blue */
+  padding: 8px 18px;
+  font-size: 1em;
+}
+button:hover { background-color: #40a9ff; }
+button:disabled { background-color: #f5f5f5; color: #bfbfbf; border-color: #d9d9d9; cursor: not-allowed; }
+button.cancel-button { background-color: #ff4d4f; } /* Ant Design red */
+button.cancel-button:hover { background-color: #ff7875; }
+button.filter-button { /* Specific style for filter button */
+    background-color: #52c41a; /* Ant Design green */
+    margin-left: 10px;
+}
+button.filter-button:hover { background-color: #73d13d; }
+
+
+/* Loading/Error/Success Messages */
+.loading, .error, .success { text-align: center; padding: 15px; margin: 20px auto; border-radius: 4px; max-width: 600px; }
+.loading { color: #1890ff; font-weight: 600; }
+.error { background-color: #fff1f0; color: #cf1322; border: 1px solid #ffa39e; }
+.success { background-color: #f6ffed; color: #389e0d; border: 1px solid #b7eb8f; }
+
+
+/* Success Popup */
+.success-popup-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 1000; }
+.success-popup-content { background-color: #fff; padding: 35px 45px; border-radius: 8px; text-align: center; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); min-width: 320px; max-width: 500px; }
+.success-popup-content h3 { color: #52c41a; margin-top: 0; margin-bottom: 15px; font-size: 1.5em; }
+.success-popup-content p { margin-bottom: 25px; color: #555; font-size: 1.1em; }
+.success-popup-content button { background-color: #52c41a; margin-right: 0; }
+.success-popup-content button:hover { background-color: #73d13d; }
+
+/* Responsive adjustments (example) */
+@media (max-width: 768px) {
+    .validation-container {
+        flex-direction: column; /* Stack columns on smaller screens */
+    }
+    .validation-image-column, .validation-data-column {
+        flex-basis: auto; /* Reset flex basis */
+        width: 100%;
+    }
+    .charts-container {
+        flex-direction: column;
+    }
+    .chart-wrapper {
+        flex-basis: auto;
+        width: 100%;
+    }
+    .app-header { padding: 10px 15px; }
+    .app-title { font-size: 1.5em; }
+    .tab-button { padding: 12px 15px; font-size: 1em; }
+    .tab-content { padding: 15px; }
+    .landing-features { flex-direction: column; align-items: center; }
+}
